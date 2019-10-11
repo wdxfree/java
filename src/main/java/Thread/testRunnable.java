@@ -9,21 +9,22 @@ public class testRunnable implements Runnable {
         System.out.println("Creating " +  threadName );
     }
     public void run() {
-        System.out.println("Running " +  threadName );
+        System.out.println("Running " + threadName);
+        try {
+            Thread.sleep(200000);
+
+        } catch (InterruptedException e) {
+            System.out.println("捕获异常");
+            System.out.println("调用中断，线程抛出异常并继续执行");
 
 
 
+        }
 
-//        try {
-//            for(int i = 4; i > 0; i--) {
-//                System.out.println("Thread: " + threadName + ", " + i);
-//                // 让线程睡眠一会
-//                Thread.sleep(50);
-//            }
-//        }catch (InterruptedException e) {
-//            System.out.println("Thread " +  threadName + " interrupted.");
+
+//        while(!Thread.currentThread().isInterrupted()){
+//            System.out.println("hello");
 //        }
-//        System.out.println("Thread " +  threadName + " exiting.");
     }
 
     public void start () {
