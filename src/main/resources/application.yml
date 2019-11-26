@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.162.1.185:3306/Study
+    username: root
+    password: 1234
+
+
+mybatis:
+  mapper-locations: classpath:mapping/mysql.xml
+  type-aliases-package: Spring.webprogram.pojo.NameUtil
