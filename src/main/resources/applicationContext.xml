@@ -6,23 +6,25 @@
 		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd"
-       default-autowire="byName">
+           default-autowire="byName">
 
     <!--使用构造器的方式创建bean-->
-    <bean id="BeanOne"  class="Spring.beans.TestBeanOne">
+    <bean id="BeanOne"  class="study.Spring.beans.TestBeanOne">
         <property name="name" value="Test"/>
         <property name="aDouble" value="2"/>
     </bean>
 
     <!--采用静态工厂方式进行bean的创建，只要管理工厂就行-->
-    <bean id="BeanStaticFactory" class="Spring.beans.BeanStaticFactory" factory-method="createBean">
+    <bean id="BeanStaticFactory" class="study.Spring.beans.BeanStaticFactory" factory-method="createBean">
     </bean>
     <!--采用动态工厂的方式-->
-    <bean id="BeanFactory" class="Spring.beans.BeanFactory"/>
-    <bean id="BeanFactoryOne" class="Spring.beans.TestBeanOne" factory-bean="BeanFactory" factory-method="createBean"/>
-    <context:component-scan base-package="algorithm"/>
-    <context:component-scan base-package="Spring.beans"/>
-    <context:component-scan base-package="Spring.usebean"/>
-    <context:component-scan base-package="Spring.webprogram.config"/>
-    <context:component-scan base-package="Spring.webprogram"/>
+    <bean id="BeanFactory" class="study.Spring.beans.BeanFactory"/>
+    <bean id="BeanFactoryOne" class="study.Spring.beans.TestBeanOne" factory-bean="BeanFactory" factory-method="createBean"/>
+    <context:component-scan base-package="study.algorithm"/>
+    <context:component-scan base-package="study.Spring.beans"/>
+    <context:component-scan base-package="study.Spring.usebean"/>
+    <context:component-scan base-package="study.Spring.webprogram.config"/>
+    <context:component-scan base-package="study.Spring.webprogram"/>
+    <context:component-scan base-package="study.redis"/>
+    <context:component-scan base-package="study.Cron"/>
 </beans>

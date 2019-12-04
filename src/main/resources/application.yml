@@ -5,8 +5,29 @@ spring:
     url: jdbc:mysql://192.162.1.185:3306/Study
     username: root
     password: 1234
+  data:
+      redis:
+        max-idle: @redis.max-idle@  #连接池最大连接数（使用负值表示没有限制）
+        min-idle: @redis.min-idle@
+        max-wait: @redis.max-wait@  #连接池最大阻塞等待时间（使用负值表示没有限制）
+        timeout: @redis.timeout@ # 连接超时时间（毫秒）
+        max-total: @redis.max-total@
+        test-on-borrow: @redis.test-on-borrow@
+        uri: @redis.uri@
+
 
 
 mybatis:
   mapper-locations: classpath:mapping/mysql.xml
-  type-aliases-package: Spring.webprogram.pojo.NameUtil
+  type-aliases-package: study.Spring.webprogram.pojo.NameUtil
+
+
+# 测试yml 中list，map，array的使用方式
+yml:
+  list:
+    - name
+    - ceshi
+  map: {k1: v1,k2: v2}
+  array: 1,2,3,4
+
+
