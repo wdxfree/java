@@ -17,10 +17,8 @@ import study.Cron.MainScheduler;
 public class ApplicationMain {
 
     public static void main(String[] args) {
-
         ConfigurableApplicationContext run = SpringApplication.run(ApplicationMain.class);
         MainScheduler mainScheduler =(MainScheduler)run.getBean("MainScheduler");
         mainScheduler.schedulerJob();
-
     }
 }
